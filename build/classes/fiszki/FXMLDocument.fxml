@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="main" prefHeight="304.0" prefWidth="412.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fiszki.FXMLDocumentController">
+    <children>
+      <AnchorPane fx:id="run" layoutX="183.0" layoutY="63.0" prefHeight="304.0" prefWidth="412.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <SplitPane dividerPositions="0.27483443708609273" orientation="VERTICAL" prefHeight="304.0" prefWidth="412.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                     <children>
+                        <VBox layoutX="281.0" layoutY="-69.0" prefHeight="95.0" prefWidth="113.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="17.0" text="Poprawnych:">
+                                 <VBox.margin>
+                                    <Insets right="15.0" />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets right="15.0" />
+                                 </padding>
+                              </Label>
+                              <Label fx:id="lGood" alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="17.0" prefWidth="67.0">
+                                 <padding>
+                                    <Insets left="0.0" right="15.0" />
+                                 </padding>
+                              </Label>
+                              <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="17.0" text="Błędnych:">
+                                 <padding>
+                                    <Insets right="15.0" />
+                                 </padding>
+                              </Label>
+                              <Label fx:id="lWrong" alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="17.0" prefWidth="67.0">
+                                 <padding>
+                                    <Insets left="0.0" right="15.0" />
+                                 </padding>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <Button fx:id="restart" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleButtonRestart" text="Rozpocznij ponownie" AnchorPane.bottomAnchor="41.0" AnchorPane.leftAnchor="14.0" />
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                     <children>
+                        <SplitPane dividerPositions="0.6911764705882353" layoutX="14.0" layoutY="7.0" prefHeight="201.0" prefWidth="410.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <TextField fx:id="question" layoutY="24.0" prefHeight="25.0" prefWidth="10.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0" />
+                                    <TextField fx:id="answer" layoutX="15.0" layoutY="50.0" prefHeight="25.0" prefWidth="10.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="50.0" />
+                                    <Label fx:id="result" layoutX="29.0" layoutY="118.0" prefHeight="96.0" prefWidth="279.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="118.0">
+                                       <font>
+                                          <Font size="36.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <Button fx:id="next" layoutX="62.0" layoutY="160.0" mnemonicParsing="false" onAction="#handleButtonNext" text="Dalej" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0" />
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="data" prefHeight="304.0" prefWidth="412.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <SplitPane dividerPositions="0.4609756097560976" prefHeight="304.0" prefWidth="412.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <Button fx:id="add" layoutX="124.0" layoutY="263.0" mnemonicParsing="false" onAction="#handleAdd" text="Dodaj" AnchorPane.bottomAnchor="10.0" />
+                        <Button fx:id="edit" layoutX="14.0" layoutY="263.0" mnemonicParsing="false" onAction="#handleUpdate" text="Zmień" AnchorPane.bottomAnchor="10.0" />
+                        <Button fx:id="del" layoutX="72.0" layoutY="263.0" mnemonicParsing="false" onAction="#handleDelete" text="Usuń" AnchorPane.bottomAnchor="10.0" />
+                        <Button fx:id="clear" mnemonicParsing="false" onAction="#handleButtonClear" text="Usuń wszystko" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="85.0" />
+                        <Button fx:id="file" mnemonicParsing="false" onAction="#handleButtonFile" text="Z pliku..." AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="15.0" />
+                        <VBox layoutX="14.0" layoutY="14.0" prefHeight="190.0" prefWidth="186.0" AnchorPane.bottomAnchor="112.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Label text="pl:" />
+                              <TextField fx:id="dataPl" />
+                              <Label text="en:" />
+                              <TextField fx:id="dataEn" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <TableView fx:id="table" layoutX="9.0" layoutY="14.0" onMouseClicked="#handleSelected" prefHeight="260.0" prefWidth="218.0" AnchorPane.bottomAnchor="42.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="plValue" maxWidth="1.7976931348623157E308" minWidth="100.0" prefWidth="-1.0" text="pl">
+                                <cellValueFactory><PropertyValueFactory property="pl" />
+                          </cellValueFactory>
+                      </TableColumn>
+                            <TableColumn fx:id="enValue" maxWidth="1.7976931348623157E308" minWidth="100.0" prefWidth="-1.0" text="en">
+                                         <cellValueFactory><PropertyValueFactory property="en" />
+                          </cellValueFactory>
+                      </TableColumn>
+                          </columns>
+                        </TableView>
+                        <Button fx:id="cancel" layoutX="47.0" layoutY="263.0" mnemonicParsing="false" onAction="#handleCancel" text="Wróć" textOverrun="CLIP" AnchorPane.bottomAnchor="10.0" />
+                        <Button fx:id="edit11" layoutX="109.0" layoutY="263.0" mnemonicParsing="false" onAction="#handleSave" text="Zapisz zmiany" textOverrun="CLIP" AnchorPane.bottomAnchor="10.0" />
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="start" prefHeight="304.0" prefWidth="412.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button fx:id="buttonstart" layoutX="238.0" layoutY="186.0" mnemonicParsing="false" onAction="#handleButtonStart" prefHeight="104.0" prefWidth="160.0" text="Start" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0" />
+            <Button fx:id="buttondata" layoutX="14.0" layoutY="265.0" mnemonicParsing="false" onAction="#handleButtonData" text="Słówka" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" />
+         </children>
+      </AnchorPane>
+    </children>
+</AnchorPane>
